@@ -4,7 +4,7 @@ Hydracept gives game teams production-ready assets through one API. Every job le
 
 A Zencode product · © Zencode Consulting Inc. · MIT License
 
-Version `0.1.3` (marketplace `distributionVersion`, independent of the Python SDK).
+Version `0.1.4` (marketplace `distributionVersion`, independent of the Python SDK).
 
 This public repo is the **Cursor / Claude / MCP catalog**. Cursor Marketplace review should use `.cursor-plugin/marketplace.json` and `plugins/cursor`.
 
@@ -13,15 +13,15 @@ This public repo is the **Cursor / Claude / MCP catalog**. Cursor Marketplace re
 Plugin path: `plugins/cursor`
 
 1. Install **Hydracept** from the Cursor Marketplace (or enable this repository as a plugin catalog).
-2. Open **Plugins → Configure** and set `HYDRACEPT_API_KEY`. Get a key at [hydracept.com/start](https://hydracept.com/start). Do not paste the key into chat.
-3. The plugin talks to hosted MCP at `https://api.hydracept.com/mcp` with `Authorization: Bearer ${HYDRACEPT_API_KEY}`.
+2. In the project, run `python -m hydracept init --apply --yes --json` (CLI `>=0.2.10`). Init binds `.cursor/mcp.json` and `.mcp.json` to stdio MCP. Get a key at [hydracept.com/start](https://hydracept.com/start) or via the init browser flow. Do not paste the key into chat.
+3. Reload MCP once. Do not copy the workspace key into **Plugins → Configure**. Hosted MCP at `https://api.hydracept.com/mcp` is for clients with no checkout.
 
 Included for Cursor:
 
-- Hosted MCP (`mcp.json`) — no stdio fallback, no secrets in git
+- Stdio MCP (`mcp.json`) — `python -m hydracept mcp serve`, no secrets in git
 - Skills: `hydracept`, `hydracept-setup`, `hydracept-image`, `hydracept-sheet`, `hydracept-smoke`
 - Commands: `/hydracept-init`, `/hydracept-doctor`
-- Rule: never solicit API keys in chat
+- Rule: never solicit API keys in chat; stdio after init in a repo
 
 ## Claude Code
 
@@ -30,7 +30,7 @@ Included for Cursor:
 /plugin install hydracept@hydracept
 ```
 
-When Claude prompts for plugin configuration, set `HYDRACEPT_API_KEY`. Claude substitutes `${user_config.HYDRACEPT_API_KEY}` (not Cursor's `${HYDRACEPT_API_KEY}`).
+Run `python -m hydracept init` in the repo, then reload MCP. Do not paste keys into chat.
 
 ## MCP Registry
 
@@ -38,7 +38,7 @@ Remote server `com.hydracept/mcp` at `https://api.hydracept.com/mcp`.
 
 ## Security
 
-This repository contains **no API keys or tokens**. Secrets are collected by the host (Cursor variables / Claude `userConfig`) and sent only as the Authorization header to Hydracept.
+This repository contains **no API keys or tokens**. In a checkout, `python -m hydracept init` stores secrets in `.hydracept/secrets.json` (gitignored). Coding-agent MCP is stdio. Hosted MCP bearer keys are only for clients with no checkout (MCP Registry / ChatGPT).
 
 ## CLI fallback
 

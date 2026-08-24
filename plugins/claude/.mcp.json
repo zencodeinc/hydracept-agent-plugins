@@ -1,11 +1,13 @@
 {
   "mcpServers": {
     "hydracept": {
-      "type": "http",
-      "url": "https://api.hydracept.com/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.HYDRACEPT_API_KEY}"
-      }
+      "command": "python",
+      "args": [
+        "-m",
+        "hydracept",
+        "mcp",
+        "serve"
+      ]
     }
   }
 }

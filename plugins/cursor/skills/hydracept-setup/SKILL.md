@@ -2,26 +2,29 @@
 name: hydracept-setup
 description: >
   Bootstrap Hydracept in a coding-agent workspace. Use when installing the CLI,
-  running init, or connecting hosted MCP without pasting secrets into chat.
+  running init, or binding stdio MCP. Never paste secrets into chat.
 ---
 
 # Hydracept Setup
 
-Marketplace-first bootstrap for Hydracept in a coding agent workspace.
+CLI-first bootstrap for Hydracept in a coding-agent checkout.
 
 ## Flow
 
 1. Check whether the Hydracept CLI is installed: `python -m hydracept --help`
 2. If missing, explain the install path and ask for approval before running any install command
-3. Verify the Hydracept CLI version is at least `0.2.3`
+3. Verify the Hydracept CLI version is at least `0.2.10` (`pip install -U hydracept`). Older CLIs (0.2.6) post job JSON as-is and 422 without project context. 0.2.10 binds stdio MCP on init/doctor.
 4. Run `python -m hydracept init --apply --yes --json`
 5. If status is `interaction_required`:
    - Present `action.url` to the human
    - If they use multiple GitHub or Google accounts, tell them to pick the correct account on the connect page
    - After they confirm browser setup, run `python -m hydracept init --apply --yes --json --wait`
-6. Unattended / CI: set `HYDRACEPT_API_KEY` and use `init --apply --yes --json` or `--ci`
-7. Offer `/hydracept-smoke` after MCP is available
-8. For project surfaces: in the game repo, use stdio MCP `hydracept_project_up_install` or `python -m hydracept project up --install`. Hosted MCP cannot apply or execute local argv. Do not leave the watcher in a Cursor background terminal.
+6. When status is `ready`, read `mcp`. If `reloadRequired` is true, tell the human to reload MCP once. Stdio uses `.hydracept/secrets.json`.
+7. Unattended / CI: set `HYDRACEPT_API_KEY` and use `init --apply --yes --json` or `--ci`
+8. If `hydracept_*` MCP tools are missing, do not retry hosted discovery — use `python -m hydracept mcp serve` or `jobs submit`. Offer `/hydracept-smoke` only when asked.
+9. For project surfaces: in the game repo, use stdio MCP `hydracept_project_up_install` or `python -m hydracept project up --install`. Hosted MCP cannot apply or execute local argv.
+
+Do **not** finish setup by copying the workspace key into **Plugins → Configure**.
 
 ## Safety
 

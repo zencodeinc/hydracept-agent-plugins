@@ -1,31 +1,28 @@
 ---
 name: hydracept-init
-description: Bootstrap Hydracept in this project using hosted MCP or the CLI init flow.
+description: Bootstrap Hydracept in this project with CLI init. Binds stdio MCP to workspace secrets.
 ---
 
 # Hydracept init
 
 Bootstrap Hydracept without asking the human to paste secrets into chat.
 
-## Preferred path (marketplace / hosted MCP)
+## Preferred path (project checkout)
 
-1. Confirm the Hydracept plugin is enabled and the `hydracept` MCP server is connected.
-2. If the host asks for plugin configuration, have the human set `HYDRACEPT_API_KEY` (Cursor: **Plugins → Configure**; Claude: plugin `userConfig`). Do not solicit the key in chat.
-3. Call MCP `hydracept_status` (or the hosted equivalent) to confirm authentication.
-4. Call MCP `hydracept_capabilities` and summarize available capability keys.
-5. Offer `/hydracept-smoke` only when the human explicitly wants a paid verification job.
-
-## CLI fallback
-
-Use this when hosted MCP is not configured or the human already uses the Hydracept CLI:
-
-1. Check `python -m hydracept --help`. If missing, explain `pip install hydracept` and wait for approval.
+1. Check `python -m hydracept --help`. If missing, explain `pip install -U 'hydracept>=0.2.10'` and wait for approval.
 2. Run `python -m hydracept init --apply --yes --json`.
 3. If status is `interaction_required`, present `action.url` and wait for the human to finish the browser connect flow, then run `python -m hydracept init --apply --yes --json --wait`.
-4. Unattended / CI: `HYDRACEPT_API_KEY` plus `init --apply --yes --json` or `--ci`.
+4. Ready JSON includes `mcp` (`bound`, `transport: stdio`, `projectConfig`, `reloadRequired`). If `reloadRequired` is true, tell the human to reload MCP once.
+5. Unattended / CI: `HYDRACEPT_API_KEY` plus `init --apply --yes --json` or `--ci`.
+
+Do **not** send the user to **Plugins → Configure** to finish init. That key store is not the workspace secret file.
+
+## No-checkout clients only
+
+Hosted MCP at `https://api.hydracept.com/mcp` is for ChatGPT and other clients with no project checkout. Coding agents in a repo use stdio.
 
 ## Safety
 
 - Never ask the user to paste API keys in chat
 - Never echo secrets from terminal output into chat
-- Prefer MCP tools over reimplementing HTTP
+- Prefer MCP tools when they are in this session; otherwise CLI

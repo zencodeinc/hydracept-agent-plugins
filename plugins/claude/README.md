@@ -11,7 +11,7 @@ Add the Hydracept marketplace, then install the namespaced plugin:
 /plugin install hydracept@hydracept
 ```
 
-When Claude prompts for plugin configuration, set `HYDRACEPT_API_KEY` (Claude `userConfig`). The plugin sends `Authorization: Bearer ${user_config.HYDRACEPT_API_KEY}`. Do not paste the key into chat.
+In a project checkout run `python -m hydracept init --apply --yes --json`, then reload MCP. Stdio uses `.hydracept/secrets.json`. Hosted MCP (`https://api.hydracept.com/mcp`) is for clients with no checkout.
 
 Commands: `/hydracept-init`, `/hydracept-doctor`.
 

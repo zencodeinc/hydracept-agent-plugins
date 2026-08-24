@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "AI execution infrastructure for games and agent-built software.",
-    "version": "0.1.3"
+    "version": "0.1.4"
   },
   "plugins": [
     {

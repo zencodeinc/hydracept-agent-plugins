@@ -1,31 +1,29 @@
 ---
 name: hydracept-doctor
-description: Check Hydracept connection, capabilities, and local CLI readiness.
+description: Check Hydracept connection, CLI readiness, and stdio MCP bind.
 ---
 
 # Hydracept doctor
 
 Inspect whether this workspace can use Hydracept. Do not submit paid jobs.
 
-## Hosted MCP (marketplace plugin)
-
-1. Call MCP `hydracept_status`. Report connected vs authentication required.
-2. If unauthenticated, tell the human to set `HYDRACEPT_API_KEY` in the plugin configuration (Cursor: **Plugins → Configure**; Claude: plugin `userConfig`) or run `/hydracept-init`.
-3. Call MCP `hydracept_capabilities` and report a short list of capability keys.
-4. Stop. Do not call `hydracept_smoke` unless the human explicitly asks.
-
-## CLI fallback
-
-If the Hydracept CLI is installed:
+## CLI (preferred in a repo)
 
 ```bash
-python -m hydracept doctor
+python -m hydracept doctor --json
 python -m hydracept agent-status --json
 ```
 
-If the CLI is missing, say so and continue with MCP-only diagnosis. Do not install packages unless the human approves.
+Doctor binds project MCP to stdio when possible. If JSON `mcp.reloadRequired` is true, tell the human to reload MCP once.
+
+If the CLI is missing, say so and offer `pip install -U 'hydracept>=0.2.10'` after approval. Do not send the user to **Plugins → Configure** as the way to authenticate a checkout.
+
+## MCP tools
+
+If `hydracept_*` tools are in **this** session, call `hydracept_status` / `hydracept_capabilities`. If they are missing, do not retry hosted discovery — use the CLI.
 
 ## Safety
 
 - Never print API keys, bearer tokens, or `.env` values
 - Use capability keys (`image.generate.v1`), not provider model names
+- Do not call smoke unless the human explicitly asks
