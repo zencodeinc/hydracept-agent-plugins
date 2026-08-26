@@ -9,7 +9,7 @@ Bootstrap Hydracept without asking the human to paste secrets into chat.
 
 ## Preferred path (project checkout)
 
-1. Check `python -m hydracept --help`. If missing, explain `pip install -U 'hydracept>=0.2.10'` and wait for approval.
+1. Check `python -m hydracept --help`. If missing, explain `pip install -U hydracept` (0.3.2+ recommended) and wait for approval.
 2. Run `python -m hydracept init --apply --yes --json`.
 3. If status is `interaction_required`, present `action.url` and wait for the human to finish the browser connect flow, then run `python -m hydracept init --apply --yes --json --wait`.
 4. Ready JSON includes `mcp` (`bound`, `transport: stdio`, `projectConfig`, `reloadRequired`). If `reloadRequired` is true, tell the human to reload MCP once.

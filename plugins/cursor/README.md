@@ -1,6 +1,8 @@
 # Hydracept for Cursor
 
-Production-ready game assets, with a receipt for every run. Sprite sheets, transparent PNGs, Sheet & Slice, BYOK, through one API.
+Production workflow for AI game assets in Cursor and Claude: reference image, cohesive sprite sheets, transparent PNGs, Unity import, receipts, and BYOK.
+
+Plugin homepage: https://hydracept.com/plugin
 
 A Zencode product · © Zencode Consulting Inc.
 

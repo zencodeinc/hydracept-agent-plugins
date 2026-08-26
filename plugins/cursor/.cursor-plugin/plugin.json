@@ -1,24 +1,30 @@
 {
   "name": "hydracept",
   "displayName": "Hydracept",
-  "version": "0.1.4",
-  "description": "Production-ready game assets, with a receipt for every run. Sprite sheets, transparent PNGs, Sheet & Slice, BYOK, through one API.",
+  "version": "0.1.5",
+  "description": "Production workflow for AI game assets in Cursor and Claude: reference image, cohesive sprite sheets, transparent PNGs, Unity import, receipts, and BYOK.",
   "author": {
     "name": "Zencode Consulting Inc.",
     "email": "support@hydracept.com"
   },
-  "homepage": "https://hydracept.com",
+  "homepage": "https://hydracept.com/plugin",
   "repository": "https://github.com/hydracept/agent-plugins",
   "license": "MIT",
   "keywords": [
     "hydracept",
     "mcp",
-    "image generation",
+    "image-generation",
     "game assets",
-    "transparent png",
-    "sprite sheet",
+    "gamedev",
+    "transparent-png",
+    "sprite-sheet",
+    "reference-image",
+    "multi-provider",
     "unity",
-    "agent skills"
+    "game-ai",
+    "agent skills",
+    "cursor",
+    "claude-code"
   ],
   "logo": "assets/logo.png",
   "publisher": "Zencode Consulting Inc.",
@@ -26,12 +32,18 @@
   "tags": [
     "hydracept",
     "mcp",
-    "image generation",
+    "image-generation",
     "game assets",
-    "transparent png",
-    "sprite sheet",
+    "gamedev",
+    "transparent-png",
+    "sprite-sheet",
+    "reference-image",
+    "multi-provider",
     "unity",
-    "agent skills"
+    "game-ai",
+    "agent skills",
+    "cursor",
+    "claude-code"
   ],
   "mcpServers": "./mcp.json"
 }

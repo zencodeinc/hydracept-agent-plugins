@@ -3,8 +3,8 @@
   "name": "com.hydracept/mcp",
   "title": "Hydracept",
   "description": "AI execution infrastructure for games and agent-built software.",
-  "version": "0.1.4",
-  "websiteUrl": "https://hydracept.com",
+  "version": "0.1.5",
+  "websiteUrl": "https://hydracept.com/plugin",
   "repository": {
     "url": "https://github.com/hydracept/agent-plugins",
     "source": "github"

@@ -16,7 +16,7 @@ python -m hydracept agent-status --json
 
 Doctor binds project MCP to stdio when possible. If JSON `mcp.reloadRequired` is true, tell the human to reload MCP once.
 
-If the CLI is missing, say so and offer `pip install -U 'hydracept>=0.2.10'` after approval. Do not send the user to **Plugins → Configure** as the way to authenticate a checkout.
+If the CLI is missing, say so and offer `pip install -U hydracept` after approval (0.3.2+ recommended). Do not send the user to **Plugins → Configure** as the way to authenticate a checkout.
 
 ## MCP tools
 
