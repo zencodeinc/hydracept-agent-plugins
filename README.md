@@ -26,7 +26,7 @@ Included for Cursor:
 ## Claude Code
 
 ```text
-/plugin marketplace add hydracept/agent-plugins
+/plugin marketplace add zencodeinc/hydracept-agent-plugins
 /plugin install hydracept@hydracept
 ```
 

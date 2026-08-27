@@ -8,7 +8,7 @@
     "email": "support@hydracept.com"
   },
   "homepage": "https://hydracept.com/plugin",
-  "repository": "https://github.com/hydracept/agent-plugins",
+  "repository": "https://github.com/zencodeinc/hydracept-agent-plugins",
   "license": "MIT",
   "keywords": [
     "hydracept",

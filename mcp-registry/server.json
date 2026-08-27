@@ -6,7 +6,7 @@
   "version": "0.1.5",
   "websiteUrl": "https://hydracept.com/plugin",
   "repository": {
-    "url": "https://github.com/hydracept/agent-plugins",
+    "url": "https://github.com/zencodeinc/hydracept-agent-plugins",
     "source": "github"
   },
   "icons": [

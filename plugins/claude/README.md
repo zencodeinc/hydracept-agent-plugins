@@ -9,7 +9,7 @@ A Zencode product · © Zencode Consulting Inc.
 Add the Hydracept marketplace, then install the namespaced plugin:
 
 ```text
-/plugin marketplace add hydracept/agent-plugins
+/plugin marketplace add zencodeinc/hydracept-agent-plugins
 /plugin install hydracept@hydracept
 ```
 
