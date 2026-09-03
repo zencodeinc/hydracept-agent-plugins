@@ -5,13 +5,13 @@
     "email": "support@hydracept.com"
   },
   "metadata": {
-    "version": "0.1.5"
+    "version": "0.1.7"
   },
   "plugins": [
     {
       "name": "hydracept",
       "source": "./plugins/claude",
-      "description": "Production workflow for AI game assets in Cursor and Claude: reference image, cohesive sprite sheets, transparent PNGs, Unity import, receipts, and BYOK."
+      "description": "One execution surface for text/reasoning, media, domains, DNS, and other external capabilities, with durable jobs, budgets, receipts, and BYOK."
     }
   ]
 }

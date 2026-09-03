@@ -1,8 +1,8 @@
 {
   "name": "hydracept",
   "displayName": "Hydracept",
-  "version": "0.1.5",
-  "description": "Production workflow for AI game assets in Cursor and Claude: reference image, cohesive sprite sheets, transparent PNGs, Unity import, receipts, and BYOK.",
+  "version": "0.1.7",
+  "description": "One execution surface for text/reasoning, media, domains, DNS, and other external capabilities, with durable jobs, budgets, receipts, and BYOK.",
   "author": {
     "name": "Zencode Consulting Inc.",
     "email": "support@hydracept.com"
@@ -13,17 +13,24 @@
   "keywords": [
     "hydracept",
     "mcp",
-    "image-generation",
-    "game assets",
-    "gamedev",
-    "transparent-png",
-    "sprite-sheet",
-    "reference-image",
+    "execution-control-plane",
+    "agent-tools",
+    "durable-jobs",
+    "receipts",
     "multi-provider",
-    "unity",
-    "game-ai",
-    "agent skills",
+    "byok",
+    "text-generation",
+    "image-generation",
+    "domains",
+    "dns",
+    "game-assets",
     "cursor",
-    "claude-code"
+    "claude-code",
+    "unity",
+    "gamedev",
+    "sprite-sheet",
+    "transparent-png",
+    "reference-image",
+    "game-ai"
   ]
 }

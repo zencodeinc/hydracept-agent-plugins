@@ -1,6 +1,6 @@
 # Hydracept for Cursor
 
-Production workflow for AI game assets in Cursor and Claude: reference image, cohesive sprite sheets, transparent PNGs, Unity import, receipts, and BYOK.
+One execution surface for text/reasoning, media, domains, DNS, and other external capabilities, with durable jobs, budgets, receipts, and BYOK.
 
 Plugin homepage: https://hydracept.com/plugin
 

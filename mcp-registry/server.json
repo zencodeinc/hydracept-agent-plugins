@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.hydracept/mcp",
   "title": "Hydracept",
-  "description": "AI execution infrastructure for games and agent-built software.",
-  "version": "0.1.5",
+  "description": "Execution control plane for agents: capabilities, durable jobs, budgets, receipts, and BYOK.",
+  "version": "0.1.7",
   "websiteUrl": "https://hydracept.com/plugin",
   "repository": {
     "url": "https://github.com/zencodeinc/hydracept-agent-plugins",

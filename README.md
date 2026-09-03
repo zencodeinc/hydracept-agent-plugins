@@ -1,10 +1,10 @@
 # Hydracept agent plugins
 
-Hydracept gives game teams production-ready assets through one API. Every job leaves a receipt.
+Hydracept gives software and agents external capabilities through one stable execution control plane. Every run leaves a receipt.
 
 A Zencode product · © Zencode Consulting Inc. · MIT License
 
-Version `0.1.5` (marketplace `distributionVersion`, independent of the Python SDK).
+Version `0.1.7` (marketplace `distributionVersion`, independent of the Python SDK).
 
 This public repo is the **Cursor / Claude / MCP catalog**. Plugin homepage: [https://hydracept.com/plugin](https://hydracept.com/plugin). Cursor Marketplace review should use `.cursor-plugin/marketplace.json` and `plugins/cursor`.
 
@@ -13,7 +13,7 @@ This public repo is the **Cursor / Claude / MCP catalog**. Plugin homepage: [htt
 Plugin path: `plugins/cursor`
 
 1. Install **Hydracept** from the Cursor Marketplace (or enable this repository as a plugin catalog).
-2. In the project, run `python -m hydracept init --apply --yes --json` (CLI `0.3.0` contract). Init binds `.cursor/mcp.json` and `.mcp.json` to stdio MCP. Get a key at [hydracept.com/start](https://hydracept.com/start) or via the init browser flow. Do not paste the key into chat.
+2. In the project, run `python -m hydracept init --apply --yes --json` (CLI `0.3.8` minimum). Init binds `.cursor/mcp.json` and `.mcp.json` to stdio MCP. Get a key at [hydracept.com/start](https://hydracept.com/start) or via the init browser flow. Do not paste the key into chat.
 3. Reload MCP once. Do not copy the workspace key into **Plugins → Configure**. Hosted MCP at `https://api.hydracept.com/mcp` is for clients with no checkout.
 
 Included for Cursor:
