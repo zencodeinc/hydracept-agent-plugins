@@ -1,4 +1,6 @@
-# Hydracept agent plugins
+# Hydracept agent plugins (retired)
+
+> **This repository is retired and no longer maintained.** The Hydracept Cursor plugin now lives at **[zencodeinc/hydracept-plugin](https://github.com/zencodeinc/hydracept-plugin)**. Please install, file issues, and submit to the Cursor Marketplace from that repository. The content below is kept for history only.
 
 Hydracept gives software and agents external capabilities through one stable execution control plane. Every run leaves a receipt.
 
